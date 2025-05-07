@@ -1,6 +1,6 @@
 <?php
 // Connect to DB
-$conn = new mysqli("localhost", "root", "", "motolite");
+$conn = new mysqli("database", "mitsumi", "mitsumi", "motolite");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
