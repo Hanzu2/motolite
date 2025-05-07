@@ -1,9 +1,16 @@
 <?php
+require 'config.php';
+require 'idiorm.php';
+
+ORM::configure('mysql:host='.DB_HOST.';dbname='.DB_NAME);
+ORM::configure('username', USERNAME);
+ORM::configure('password', PASSWORD);
+
 // Connect to DB
-$conn = new mysqli("database", "mitsumi", "mitsumi", "motolite");
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+// $conn = new mysqli("database", "mitsumi", "mitsumi", "motolite");
+// if ($conn->connect_error) {
+//     die("Connection failed: " . $conn->connect_error);
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
