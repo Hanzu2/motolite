@@ -56,76 +56,13 @@ ORM::configure('password', PASSWORD);
     </ul>
 </nav>
 
-<!-- Main Content -->
-<main class="main-container">
-    <section class="categories">
-        <div class="category-label-box">
-            <h2>Category</h2>
-            <div class="horizontal-line"></div>
-        </div>
-        <div class="category-box">
-            <ul class="clickable-list">
-                <li>
-                    <a href="#" class="main-category" data-category="engine">Engines</a>
-                    <ul class="sub-categories">
-                        <li><a href="#" data-category="pistons">Pistons & Rings</a></li>
-                        <li><a href="#" data-category="crankshafts">Crankshafts & Bearings</a></li>
-                        <li><a href="#" data-category="camshafts">Camshafts & Valvetrain</a></li>
-                        <li><a href="#" data-category="engine-gaskets">Engine Gaskets & Seals</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#" class="main-category" data-category="electrical">Electrical & Ignition</a>
-                    <ul class="sub-categories">
-                        <li><a href="#" data-category="spark-plugs">Spark Plugs</a></li>
-                        <li><a href="#" data-category="ignition-coils">Ignition Coils</a></li>
-                        <li><a href="#" data-category="alternators">Alternators</a></li>
-                        <li><a href="#" data-category="batteries">Batteries</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#" class="main-category" data-category="fuel-system">Fuel System</a>
-                    <ul class="sub-categories">
-                        <li><a href="#" data-category="fuel-pumps">Fuel Pumps</a></li>
-                        <li><a href="#" data-category="fuel-injectors">Fuel Injectors</a></li>
-                        <li><a href="#" data-category="fuel-filters">Fuel Filters</a></li>
-                        <li><a href="#" data-category="throttle-bodies">Throttle Bodies</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#" class="main-category" data-category="exhaust-system">Exhaust System</a>
-                    <ul class="sub-categories">
-                        <li><a href="#" data-category="exhaust-manifolds">Exhaust Manifolds</a></li>
-                        <li><a href="#" data-category="catalytic-converters">Catalytic Converters</a></li>
-                        <li><a href="#" data-category="mufflers">Mufflers</a></li>
-                        <li><a href="#" data-category="o2-sensors">O2 Sensors</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#" class="main-category" data-category="brake-system">Brake System</a>
-                    <ul class="sub-categories">
-                        <li><a href="#" data-category="brake-pads">Brake Pads</a></li>
-                        <li><a href="#" data-category="brake-rotors">Brake Rotors</a></li>
-                        <li><a href="#" data-category="brake-calipers">Brake Calipers</a></li>
-                        <li><a href="#" data-category="brake-fluid">Brake Fluid</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </section>
+<?php
+    $page = !empty($_GET['page']) ? $_GET['page'] : "index";
 
-    <div class="product-section">
-        <h1 class="section-title">Products</h1>
-        <div class="product-list" id="product-list"></div>
-    </div>
-</main>
+    require_once 'pages/'.$page.'.php';
+?>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        window.categoryLinks = document.querySelectorAll("[data-category]");
-    });
-</script>
-<script src="js/home_page-script.js"></script>
+
 
 </body>
 </html>
